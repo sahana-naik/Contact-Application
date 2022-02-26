@@ -7,7 +7,6 @@ import "./addcontact.scss";
 
 const AddContact = () => {
   const [check, setCheck] = useState(false);
-  const [userimg, setUserImg] = useState()
   var id;
   const navigate = useNavigate();
   const initialState = {
@@ -108,10 +107,6 @@ const AddContact = () => {
                 onChange={checkHandler}
               />
             </div>
-            {/* <div className=" col-lg-8 add-col">
-              <input type="file"  value={userimg} onChange={(e) => setUserImg(e.target.value)} />
-              <button>Upload!</button>
-            </div> */}
           </div>
           <button type="submit" className="btn-sumbit">Submit</button>
         </form>

@@ -96,7 +96,7 @@ const ContactList = () => {
       <Link to={'/add-contact'}><AiFillPlusCircle className="icon"/>
       </Link> 
       </div>
-      {data.length == 0  ? <p>No Data Found </p> :
+      {data.length == 0  ? <p>No Contact Saved </p> :
        <Table data={data} columns={columns} />}
        {/* {data && <Table data={data} columns={columns} />} */}
       <Delete show={show} onHide={handleClose} onDelete={deleteContact} />

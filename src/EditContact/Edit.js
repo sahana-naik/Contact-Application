@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 
 const EditContact = () => {
 
-  const [userimg, setUserImg] = useState()
   const { id } = useParams();
   const navigate = useNavigate();
   var data = JSON.parse(localStorage.getItem("contactdetails"));
@@ -117,10 +116,6 @@ const EditContact = () => {
                 onChange={checkHandler}
               />
             </div>
-            {/* <div className=" col-lg-8 add-col">
-              <input type="file"  value={userimg} onChange={(e) => setUserImg(e.target.value)} />
-              <button>Upload!</button>
-            </div> */}
           </div>
           <button type="submit" className="btn-sumbit">Submit</button>
         </form>
