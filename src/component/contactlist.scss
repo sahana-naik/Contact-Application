@@ -1,0 +1,45 @@
+.header {
+    font-size: 2.1rem;
+    text-align: center;
+    color: #120683;
+    margin-top: 20px;
+}
+
+.add-icon {
+    float: right;
+    margin:  0 30px;
+    font-size: 50px;
+    & .icon {     
+         color: #120683;
+    }
+}
+
+.btn-wrap {
+    & button {
+        width: 100px;
+        border:none;
+        background-color: #120683;
+        color: #fff;
+        padding: 5px 10px;
+    }
+}
+
+.activestatus-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > .active-true {
+      height: 15px;
+      width: 15px;
+      background-color: #008000;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    & > .active-false {
+      height: 15px;
+      width: 15px;
+      background-color: #FF0000;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  }

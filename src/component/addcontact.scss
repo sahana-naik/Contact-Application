@@ -1,0 +1,52 @@
+.add-form {
+  display: block;
+  width: 70%;
+  height: auto;
+  margin: auto;
+  background-color: #ddd;
+  margin-top: 50px;
+  padding-bottom: 30px;
+  & .add-header {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #007e7d;
+      padding: 10px 0 0 0;
+  }
+  & .add-contact-form {
+      padding: 30px 30px 0 30px;
+    .form-group {
+      height: 90px;
+      & > .form-label {
+        margin-bottom: 0px;
+        line-height: 30px;
+        font-size: 16px;
+        color: #007e7d;
+        font-weight: bold;
+      }
+      
+    }
+    .form-groups {
+        height: 40px;
+        & > .form-label {
+          margin-bottom: 0px;
+          line-height: 30px;
+          font-size: 16px;
+          color: #007e7d;
+          font-weight: bold;
+        }
+        
+      }
+  }
+  .btn-sumbit {
+      display: block;
+      margin: auto;
+      width: 100px;
+      background-color: #120683;
+      border: 1px solid #120683;
+      color: white;
+      padding: 3px 10px;
+        border-radius: 5px;
+  }
+  
+}

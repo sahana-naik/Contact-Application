@@ -1,0 +1,86 @@
+.table-wrap {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-top: 20px;
+    width: 100%;
+    z-index:0;
+    & table {
+      z-index:0;
+      width: 100%;
+      overflow: auto;
+      & td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      & th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #120683;
+        color: white;
+      }
+      & tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+  .custom-pagination {
+    margin: 20px 0;
+        display: flex;
+        padding-bottom: 20px;
+        justify-content: flex-end;
+        align-items: center;
+        & > .pagination-number {
+          padding-right: 10px;
+        }
+        & > .pagination-select {
+          padding-right: 10px;
+          & > .select-page {
+            height: 35px;
+            width: 120px;
+          }
+        }
+        & > .custompage-number {
+          height: 35px;
+          
+          & > .custompage-number-input {
+            height: 35px;
+            width: 60px;
+            text-align: center;
+            border: 2px solid #120683
+          }
+        }
+        & .pagination-btn-arrow {
+          width: 40px;
+          height: 35px;
+          padding:  0 10px;
+          &:disabled {
+            background-color: #120683;
+            border: 1px  solid #177e8f;
+            color: #fff;
+          }
+          &:not(:disabled) {
+            background-color: #120683;
+            color: #fff;
+            border: 1px  solid #177e8f;
+            // border-color: $formBackgroundColor;
+          }
+        }
+        & .pagination-btn {
+          width:100px;
+          padding:  0 10px;
+          height: 35px;
+          &:disabled {
+            background-color: #120683;
+            border: 1px  solid #177e8f;
+            color: #fff;
+          }
+        &:not(:disabled) {
+          background-color: #120683;
+          color: #fff;
+          // border-color: $formBackgroundColor;
+        }
+      }
+  }
