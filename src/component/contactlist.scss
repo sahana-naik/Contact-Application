@@ -43,3 +43,14 @@
       display: inline-block;
     }
   }
+
+  .img-wrap  {
+    text-align: center;
+& .img-user{
+  width:80px;
+  height: 80px;
+  border-radius: 50%;
+  border-color: #120683;
+}
+  }
+  

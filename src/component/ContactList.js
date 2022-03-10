@@ -20,6 +20,18 @@ const ContactList = () => {
   };
   const COLUMNS = [
     {
+      Header: "Image",
+      accessor: (row) => {
+        console.log("rrrr",row)
+        return (
+          <div className="img-wrap">
+
+            <img src={row.img} className="img-user" /> 
+          </div>
+        )
+      }
+    },
+    {
       Header: "Name",
       accessor: "name",
     },
@@ -89,6 +101,18 @@ const ContactList = () => {
     // _removeData("contactdetails");
   };
 
+   data?.sort((a,b) => {
+   let x = a.name.toLowerCase();
+   let y = b.name.toLowerCase();
+   if(x < y) {
+     return - 1
+   }
+   if(x > y) {
+     return 1
+   }
+   return 0
+  })
+
   return (
     <React.Fragment>
       <h1 className="header">Contact List</h1>
@@ -96,9 +120,8 @@ const ContactList = () => {
       <Link to={'/add-contact'}><AiFillPlusCircle className="icon"/>
       </Link> 
       </div>
-      {data.length == 0  ? <p>No Contact Saved </p> :
-       <Table data={data} columns={columns} />}
-       {/* {data && <Table data={data} columns={columns} />} */}
+       {data && <Table data={data} columns={columns} />}
+       {!data &&   <p>No contact Saved</p>}
       <Delete show={show} onHide={handleClose} onDelete={deleteContact} />
     </React.Fragment>
   );

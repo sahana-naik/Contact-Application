@@ -4,6 +4,9 @@ import { useParams } from "react-router";
 import './Edit.scss';
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Avatar } from "@mui/material";
+import { storage } from "../firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const EditContact = () => {
 
@@ -51,7 +54,8 @@ const EditContact = () => {
         return {...obj,  name: fname,
           phone: phone,
           type: type,
-          checked: check,};
+          checked: check,
+        img: url};
       } 
       return obj;
     });
@@ -61,6 +65,31 @@ const EditContact = () => {
     navigate('/')
   };
   
+  const [image, setImage] = useState(finaleditData.img);
+  const [url, setUrl] = useState(finaleditData.img);
+  const handleImageChange = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
+
+  const imgSubmit = (e) => {
+    e.preventDefault();
+    const imageRef = ref(storage,`${image.name}`);
+    uploadBytes(imageRef, image)
+      .then(() => {
+        getDownloadURL(imageRef)
+          .then((url) => {
+            setUrl(url);
+          })
+          .catch((err) => {
+            console.log("imggerr", err.message);
+          });
+      })
+      .catch((err) => {
+        console.log("imggeruploadimgerr", err.message);
+      });
+  };
 
   return (
     <React.Fragment>
@@ -92,8 +121,24 @@ const EditContact = () => {
                 required
               />
             </div>
+            <div className="form-group col-lg-12 mb-5 pd-5">
+              <label className="form-label">Img</label>
+              <Avatar
+                alt="img"
+                src={url} 
+                sx={{ width: 56, height: 56 }}
+              />
+              <input
+              name="image"
+                type="file"
+                className="form-control "
+                onChange={handleImageChange}
+                required
+              />
+              <button onClick={imgSubmit}>Sumbit</button>
+            </div>
 
-            <div className="form-group col-lg-12">
+            <div className="form-group col-lg-12 mt-5">
               <label className="form-label">Type</label>
               <select
                  className="form-control"
